@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>8問</title>
+    </head>
+    <body>
+    </body>
+    <script>
+        "use strict";
+        
+        var r = 250;
+        var g = 250;
+        var b = 250;
+
+        if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)  {
+            console.log("error");
+        } else if (r > b && r > g) {
+            console.log("赤系");
+        } else if (g > r && g > b) {
+            console.log("緑系");
+        } else if (b > r && b > g) {
+            console.log("青系");
+        } else if (r === g && r > b) {
+            console.log("黄系");
+        } else if (g === b && g > r) {
+            console.log("シアン系");
+        } else if (r === b && r > g) {
+            console.log("マゼンタ系");
+        } else if (r === g && g === b) {
+            console.log("モノトーン系");
+        }
+        
+    </script>
+</html>
