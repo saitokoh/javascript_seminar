@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>8問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    for (var i = 0 ; i < 30 ; i++) {
+        var num = i + 1;
+        if (num % 3 === 0 && num % 5 === 0) {
+            console.log("☆");
+        } else if (num % 3 === 0) {
+            console.log("△");
+        } else if (num % 5 === 0) {
+            console.log("◇");
+        } else {
+            console.log(num);
+        }
+    }
+</script>
+
+</html>
