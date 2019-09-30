@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>8問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    var users = [
+        {
+            name: "桃太郎",
+            pets: ["dog", "bird", "monkey"]
+        },
+        {
+            name: "金太郎",
+            pets: ["bear","boar","monkey","deer","rabbit"]
+        },
+        {
+            name: "浦島太郎",
+            pets: ["turtle"]
+        }
+    ];
+
+    for(var i = 0 ; i < users.length; i++) {
+        console.log(users[i].name + "の仲間");
+        for (var j = 0 ; j < users[i].pets.length ; j++ ) {
+            console.log(users[i].pets[j]);
+        }
+    }
+</script>
+
+</html>
