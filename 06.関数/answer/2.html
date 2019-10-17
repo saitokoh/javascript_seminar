@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>2問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    // getMaxValueを呼び出した結果をコンソールに出力している
+    console.log(getMaxValue(30, 50, 49));
+
+    function getMaxValue(value1, value2, value3) {
+        var max = value1;
+        if (value1 > value2) {
+            if (value3 > value1) {
+                max = value3;
+            }
+        } else {
+            if (value2 > value3) {
+                max = value2;
+            } else {
+                max = value3;
+            }
+        }
+        return max;
+    }
+</script>
+
+</html>

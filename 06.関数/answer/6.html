@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>6問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    var class1Points = [70,82,51,49,38,88,73,66];
+    var class2Points = [89,55,47,49,68,63,98,31];
+    var class3Points = [77,54,38,95,46,68,72,58];
+
+    var class1Ave = calcAvarage(class1Points);
+    var class2Ave = calcAvarage(class2Points);
+    var class3Ave = calcAvarage(class3Points);
+    console.log('1組の平均点：' + class1Ave);
+    console.log('2組の平均点：' + class2Ave);
+    console.log('3組の平均点：' + class3Ave);
+
+    function calcAvarage(points) {
+        var average = 0;
+        for (var i = 0; i < points.length; i++) {
+            average += points[i];
+        }
+        average /= points.length;
+        return average;
+    }
+</script>
+
+</html>

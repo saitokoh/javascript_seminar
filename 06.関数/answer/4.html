@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>4問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    // 1つの配列を引数にして、配列に入っている数値の和を返すsum関数
+    function sum(values) {
+        var sum = 0;
+        for(var i = 0 ; i < values.length ; i++ ) {
+            sum += values[i];
+        }
+        return sum;
+    }
+
+    var array = [1, 2, 3, 4, 5, 6, 7, 9, 10];
+    console.log(sum(array));
+
+
+</script>
+
+</html>

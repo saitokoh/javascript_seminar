@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>8問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    function getCurrentPrice(product) {
+        return product.price * (1 - product.discountRate);
+    }
+
+    var products = [
+        {
+            name: "ドロップショルダートレンチコート",
+            price: 4990,
+            valiations: [
+                {
+                    color: "ベージュ",
+                    stock: 8
+                },
+                {
+                    color: "ネイビー",
+                    stock: 6
+                }
+            ],
+            discountRate: 0.2
+        },
+        {
+            name: "ウールブレンドオーバーサイズチェスターコート",
+            price: 5990,
+            valiations: [
+                {
+                    color: "グレー",
+                    stock: 9
+                },
+                {
+                    color: "ブラック",
+                    stock: 5
+                },
+                {
+                    color: "ブラウン",
+                    stock: 4
+                },
+                {
+                    color: "グリーン",
+                    stock: 7
+                },
+                {
+                    color: "ブルー",
+                    stock: 0
+                }
+            ],
+            discountRate: 0
+        },
+        {
+            name: "ウィンドプルーフ裏フリースジャケット",
+            price: 2990,
+            valiations: [
+                {
+                    color: "オフホワイト",
+                    stock: 1
+                },
+                {
+                    color: "ブラック",
+                    stock: 4
+                },
+                {
+                    color: "オレンジ",
+                    stock: 12
+                }
+            ],
+            discountRate: 0
+        },
+        {
+            name: "フロントボタンオープンカラーコート",
+            price: 2990,
+            valiations: [
+                {
+                    color: "ベージュ",
+                    stock: 6
+                },
+                {
+                    color: "オリーブ",
+                    stock: 16
+                },
+                {
+                    color: "ネイビー",
+                    stock: 8
+                }
+            ],
+            discountRate: 0.3
+        },
+        {
+            name: "ワッフルカーディガン",
+            price: 990,
+            valiations: [
+                {
+                    color: "グレー",
+                    stock: 0
+                },
+                {
+                    color: "ブラック",
+                    stock: 2
+                },
+                {
+                    color: "ナチュラル",
+                    stock: 3
+                },
+                {
+                    color: "ブラウン",
+                    stock: 0
+                }
+            ],
+            discountRate: 0
+        }
+    ];
+
+    for (var i = 0 ; i < products.length ; i++) {
+        console.log("商品名：" + products[i].name);
+        console.log("現在の価格：" + getCurrentPrice(products[i]) + "円");
+    }
+</script>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>3問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    console.log(getMaxLengthString('momotaro', 'kintaro', 'urashimataro'));
+
+
+    function getMaxLengthString(string1, string2, string3) {
+        var maxLengthString = string1;
+        if (string1.length > string2.length) {
+            if (string3.length > string1.length) {
+                maxLengthString = string3;
+            }
+        } else {
+            if (string2.length > string3.length) {
+                maxLengthString = string2;
+            } else {
+                maxLengthString = string3;
+            }
+        }
+        return maxLengthString;
+    }
+</script>
+
+</html>

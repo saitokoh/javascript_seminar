@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>7問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    
+    var user = {
+        name: '齋藤浩平',
+        age: 30,
+        hobbies: ["スカッシュ", "映画"]
+    };
+    if (judge(user)) {
+        console.log("お酒飲める");
+    } else {
+        console.log("お酒飲めない");
+    }
+    
+    function judge(user) {
+        if (user.age >= 20) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+
+</html>
