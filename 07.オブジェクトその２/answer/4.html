@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>4問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    function makeBook(title, author) {
+        return {
+            title: title,
+            author: author
+        };
+    }
+
+    var myBooks = [
+        makeBook('銀河鉄道の夜', '宮沢賢治'),
+        makeBook('ノルウェイの森', '村上春樹'),
+        makeBook('容疑者Xの献身', '東野圭吾')
+    ];
+
+    for (var i = 0 ; i < myBooks.length ; i++) {
+        console.log('本' + (i+1));
+        console.log('タイトル：' + myBooks[i].title);
+        console.log('著者：' + myBooks[i].author);
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    function makeBook(title, author) {
+        return {
+            title: title,
+            author: author
+        };
+    }
+
+    var bookShelf = {
+        topRow: null,
+        buttomRow: null,
+        takeTopRow: function () {
+            var targetBook = this.topRow;
+            if (this.topRow !== null) {
+                this.topRow = null
+            }
+            return targetBook;
+        },
+        takeButtomRow: function () {
+            var targetBook = this.buttomRow;
+            if (this.buttomRow !== null) {
+                this.buttomRow = null
+            }
+            return targetBook;
+        },
+        putTopRow: function (book) {
+            if (this.topRow === null) {
+                this.topRow = book;
+                return true;
+            } else {
+                return false;
+            }
+        },
+        putButtomRow: function (book) {
+            if (this.buttomRow === null) {
+                this.buttomRow = book;
+                return true;
+            } else {
+                return false;
+            }
+        },
+        searchBookByTitle: function (title) {
+            if (this.topRow !== null && this.topRow.title === title) {
+                return 'top';
+            } else if (this.buttomRow !== null && this.buttomRow.title === title) {
+                return 'buttom';
+            } else {
+                return null;
+            }
+        }
+    }
+
+    // 検証
+    // topRowの検証
+    var book = bookShelf.takeTopRow();
+    if (book === null) {
+        console.log('test01:takeTopRowテスト：topRowが空の時：null')
+    }
+    if (bookShelf.putTopRow(makeBook('銀河鉄道の夜', '宮沢賢治'))) {
+        console.log('test02:putTopRowテスト：topRowが空の時：true')
+    }
+    if (!bookShelf.putTopRow(makeBook('テストタイトル', 'テスト著者'))) {
+        console.log('test03:putTopRowテスト：topRowが空じゃない時：false')
+    }
+    book = bookShelf.takeTopRow();
+    if (book !== null && bookShelf.topRow === null) {
+        console.log('test04:takeTopRowテスト：topRowが空じゃない時：book.title:' + book.title + ' book.author:' + book.author + ' bookShelf.topRow: null');
+    }
+    
+    // buttomRowの検証
+    var book = bookShelf.takeButtomRow();
+    if (book === null) {
+        console.log('test05:takeButtomRowテスト：buttomRowが空の時：null')
+    }
+    if (bookShelf.putButtomRow(makeBook('ノルウェイの森', '村上春樹'))) {
+        console.log('test06:putButtomRowテスト：buttomRowが空の時：true')
+    }
+    if (!bookShelf.putButtomRow(makeBook('テストタイトル', 'テスト著者'))) {
+        console.log('test07:putButtomRowテスト：buttomRowが空じゃない時：false')
+    }
+    book = bookShelf.takeButtomRow();
+    if (book !== null && bookShelf.buttomRow === null) {
+        console.log('test08:takeButtomRowテスト：buttomRowが空じゃない時：book.title:' + book.title + ' book.author:' + book.author + ' bookShelf.buttomRow: null');
+    }
+
+    // searchBookByTitleの検証
+    if (bookShelf.searchBookByTitle('ノルウェイの森') === null) {
+        console.log('test09:searchBookByTitleテスト：topRowとbuttomRowが空の時：null');
+    }
+    bookShelf.putTopRow(book);
+    if (bookShelf.searchBookByTitle('ノルウェイの森') === 'top') {
+        console.log('test10:searchBookByTitleテスト：topRowに合致：top');
+    }
+    bookShelf.putButtomRow(makeBook('銀河鉄道の夜', '宮沢賢治'));
+    if (bookShelf.searchBookByTitle('銀河鉄道の夜') === 'buttom') {
+        console.log('test11:searchBookByTitleテスト：buttomRowに合致：buttom');
+    }
+    if (bookShelf.searchBookByTitle('容疑者Xの献身') === null) {
+        console.log('test12:searchBookByTitleテスト：topRowにもbuttomRowにも合致しない：null');
+    }
+    bookShelf.takeButtomRow();
+    bookShelf.putButtomRow(book);
+    if (bookShelf.searchBookByTitle('ノルウェイの森') === 'top') {
+        console.log('test13:searchBookByTitleテスト：topRowにもbuttomRowにも合致：top');
+    }
+        
+</script>
+
+</html>

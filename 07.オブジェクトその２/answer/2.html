@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>2問</title>
+</head>
+
+<body>
+</body>
+<script>
+    "use strict";
+
+    var user = {
+        name: '齋藤浩平',
+        height: 176, // cm
+        weight: 60,  // kg
+        getBmi: function() {
+            return this.weight / ((this.height/100) * (this.height/100));
+        }
+    }
+
+    console.log(user.getBmi());
+</script>
+
+</html>
